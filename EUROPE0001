@@ -1,4 +1,4 @@
-local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/topillesrevenge/Streamable-Silent/main/Side"))()
+local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/0GR8cBuv"))()
 Aiming.TeamCheck(false)
 
 local Workspace = game:GetService("Workspace")
@@ -13,7 +13,7 @@ local CurrentCamera = Workspace.CurrentCamera
 local DaHoodSettings = {
     SilentAim = true,
     AimLock = false,
-    Prediction = 0.11243,
+    Prediction = 0.102421,
     AimLockKeybind = Enum.KeyCode.E
 }
 getgenv().DaHoodSettings = DaHoodSettings
@@ -49,9 +49,6 @@ __index = hookmetamethod(game, "__index", function(t, k)
     return __index(t, k)
 end)
 
-
-
-
 RunService:BindToRenderStep("AimLock", 0, function()
     if (DaHoodSettings.AimLock and Aiming.Check() and UserInputService:IsKeyDown(DaHoodSettings.AimLockKeybind)) then
         local SelectedPart = Aiming.SelectedPart
@@ -62,26 +59,17 @@ RunService:BindToRenderStep("AimLock", 0, function()
     end
     end)
 
-
-    local player = game.Players.LocalPlayer
-    local mouse = player:GetMouse()
-    mouse.KeyDown:Connect(function(key)
+    local cframeSpheedhotkeyXd1 = "l" -- toggle key
+    local mouse = game.Players.LocalPlayer:GetMouse()
     
-        if key == "x" then
-                
-        
-        
-            if DaHoodSettings.SilentAim == false then
-                
-            DaHoodSettings.SilentAim = true
-                
-            else
-                    
-            DaHoodSettings.SilentAim = false
-        
-            end
-        end
+    
+    
+    mouse.KeyDown:Connect(function(value)
+    if value == cframeSpheedhotkeyXd1 then
+    if DaHoodSettings.SilentAim == true then
+        DaHoodSettings.SilentAim = false
+    else
+        DaHoodSettings.SilentAim = true
+    end
+    end
     end)
-    
-    
-        
